@@ -22,5 +22,13 @@
         });
     };
 
+})(jQuery);
 
+
+/**
+ * search button and it's suggestion extension/dropdown --- autocomplete
+ */
+(function($) {
+    
+    
 })(jQuery);

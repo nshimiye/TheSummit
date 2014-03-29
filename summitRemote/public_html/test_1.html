@@ -33,8 +33,18 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    </head>
 
+        <style>
+            .allback { 
+                background: url(img/Sky-Ocean-Wallpaper.jpg) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    
     <body>
         <div class="site-wrapper">
 
@@ -481,7 +491,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <hr><hr>
+                                <hr>
                             </div>
                             <div class="col-sm-2" style="position: relative">
                                 <hr>
@@ -737,24 +747,17 @@
 
 
             $(window).resize(function() {
-                var i;
-                for (i = 0; i < elts.length; i++) {
-                    var center = getCenter("#earth_center");
-                    var elt = getCenter(elts[i]);
-
-                    var an = compDegree(center, elt);
-                    positionArr(an, elts[i]);
-
-                }
+              
             });
 
             var center = getCenter("#earth_center");
             $(".hlines").each(function() {
-                console.log(this);
-                var elt = getCenter(this);
+                var bubble = this;
+                console.log(bubble);
+                var elt = getCenter(bubble);
 
                 var an = compDegree(center, elt);
-                positionArr(an, this);
+                positionArr(an, bubble);
             });
 
 

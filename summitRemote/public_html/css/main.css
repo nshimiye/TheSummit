@@ -25,8 +25,6 @@
 
 
     border-top: 2em solid transparent;
-
-
     border-bottom: 2em solid transparent;
 
     /* border-left: 5em solid #BDC3C7; */
@@ -58,14 +56,13 @@
     width: 100%;
     -moz-box-shadow: 0 0 20px 0  #2c3e50;
     -webkit-box-shadow: 0 0 20px 0  #2c3e50;
-    box-shadow: 0 0 20px 0  #2c3e50;
+    box-shadow: 0 0 5px 0  #2c3e50;
 
     border: none;
      overflow-y: visible;
 }
 
 .hlines:hover{
-    cursor: pointer;
     -moz-box-shadow: 0 0 20px 0  #2c3e50;
     -webkit-box-shadow: 0 0 20px 0  #2c3e50;
     box-shadow: 0 15px 15px 0  #2c3e50;
@@ -89,3 +86,38 @@
      font-size: 1.5em;
      font-weight: 300;
 }
+
+
+/*
+ Autocomplete styling here
+ */
+ 
+ .autocmp{
+     position: absolute; 
+     top: 1.8em; 
+     left: 0.5%; 
+     background-color: white; 
+     width: 99%; 
+     z-index: 9; 
+     font-size: 1.3em;
+     font-weight: 400;
+     
+     box-shadow: 0 0 10px 0 #2c3e50;
+     
+ }
+ .autocmp a {
+     text-decoration: none;
+     color: rgba(47, 65, 84,1);
+ }
+  a .auto-view:hover{
+background-color: rgba(181, 187, 192, 1);
+
+ 
+ }
+  
+ a .auto-view{
+     border-bottom: 1px solid rgba(189, 195, 199, 1); 
+     width: 100%; 
+     padding: 0.5em; 
+     overflow: hidden;
+ }

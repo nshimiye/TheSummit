@@ -21,12 +21,22 @@
         <!-- Bootstrap core CSS -->
         <link href="css/boot/css/bootstrap.min.css" rel="stylesheet">
 
+
         <!-- Custom styles for this template -->
         <link href="css/boot/cover.css" rel="stylesheet">
 
         <link href="css/main.css" rel="stylesheet">
 
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,700,900' rel='stylesheet' type='text/css'>
+        <style>
+            .allback { 
+                background: url(img/sky_and_horizon_1024_by_619.jpg) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -52,23 +62,40 @@
                          color: rgba(47, 65, 84,1);
                          padding-bottom: 1em;
                          z-index: 100;
-
                          ">
 
                         <div class="inner">
                             <h3 class="masthead-brand" style=" font-weight: 300; font-size: 3em;">THE Summit</h3>
-                            <div class="col-lg-6 col-lg-offset-1" style=" position: relative; top: 1.5em;">
-                                <div class="input-group">
+                            <div class="col-lg-6 col-lg-offset-1" style=" position: relative; top: 1.5em; padding-left: 0; padding-right: 0;">
+                                <div class="input-group" style=" z-index: 10;">
 
                                     <span class="input-group-btn">
                                         <button class="btn btn-default form_elt" type="button">
                                             <span class="glyphicon glyphicon-search"></span>
-
-
                                         </button>
                                     </span>
                                     <input type="text" class="form-control form_elt" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary form_elt" type="button">
+                                            &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                    </span>
                                 </div><!-- /input-group -->
+
+
+                                <div id="autocmp1" class="autocmp">
+                                    <a href="#" >
+                                        <div class="auto-view">
+                                            ques question 1question 1question 1 question 1tion 1
+
+                                        </div>
+                                    </a>
+                                    <a href="#" >
+                                        <div class="auto-view">question 1</div></a>
+                                    <a href="#" >
+                                        <div class="auto-view">question 1</div></a>
+                                </div>
+
                             </div>
                             <ul class="nav masthead-nav">
                                 <li class="active"><a href="#">Login</a></li>
@@ -83,9 +110,8 @@
                     <!------------------start of container------------------>
 
                     <div class="container" role="main" style="
-                         border: 1px solid rgba(1,1,1,0.2); 
                          position: relative;
-                         top: 2em;
+                         top: 8em;
                          ">
 
 
@@ -93,147 +119,397 @@
                         <div class="row" role="main" style="
 
                              ">
-
-                            <div class="col-lg-4" role="main" style="
-                                 border: 1px solid rgba(1,1,1,0.2); 
+                            <div class="col-lg-2" role="main" style="
+                                 position: relative;
 
                                  ">
+                                <hr>
+                                <div data-posh="l" class="hlines" data-pos="u" style="min-height: 170px;">
 
-                                <button type="button" class="btn btn-danger pophere" data-container="body" 
-                                        data-toggle="popover" data-placement="top" 
-                                        title="I am testing"
-                                        data-content="Vivamus sagittis lacus vel augue dxgg dg fdgfdgfdg fdgfdgfdgfdg fdgfdgfdg fdgfdgdfgfd dfgdfgfdg laoreet rutrum faucibus.">
-                                    Popover on top
-                                </button>
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl0">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    CLIMATE CHANGE
+                                                </h4>
+                                            </div>
 
+                                            <div id="hl0" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <hr>
 
 
                             </div>
+                            <div class="col-lg-2" role="main" style="
+                                 position: relative;
 
-                            <div class="col-lg-4" role="main" style="
-                                 border: 1px solid rgba(1,1,1,0.2); 
-                                 padding-top: 1em;
                                  ">
-
-
                                 <hr>
+                                <div class="hlines" data-posv="u" data-pos="l" 
+                                     style="min-height: 170px; "
+                                     >
+
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl1">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title" style="font-weight: 400;">
+
+                                                    GVT NEWS 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <hr>
+
                             </div>
 
-                            <div class="col-lg-4" role="main" style="
-                                 border: 1px solid rgba(1,1,1,0.2); 
 
-                                 ">
-                                bootstrap half
+                            <div class="col-lg-2 " >
                                 <hr>
+                                <div id="gvt_quest02" data-posv="u" data-pos="l" class="hlines" 
+                                     >
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl7">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    PANORAMA ON THE FLY 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl7" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <hr>
+                                <div id="gvt_quest02l" data-posv="u" data-pos="l" class="hlines" >
+                                    <div class="panel panel-default"><a data-toggle="collapse" data-parent="#accordion" href="#hl8">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    NIELS' WORK
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl8" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-2 " >
+                                <hr>
+                                <div id="gvt_quest03" data-posv="u" data-pos="r" class='hlines'>
+                                    <div class="panel panel-default"> <a data-toggle="collapse" data-parent="#accordion" href="#hl13">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    SOCIAL JUSTICE
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl13" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div id="gvt_quest03l" data-posv="u" data-pos="r" class="hlines">
+
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl15">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title" >
+
+                                                    GVT NEWS 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl15" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-lg-2" role="main" >
+                                <hr>
+                                <div id="gvt_quest04" data-posv="u" data-pos="r" class="hlines" style="min-height: 170px"
+                                     >
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl14">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    NIELS' WORK
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl14" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </div>
+                            <div class="col-lg-2" role="main" >
+                                <hr>
+                                <div id="gvt_quest040" data-posh="r" data-pos="u" class="hlines" style="
+                                     min-height: 170px; 
+                                     ">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl16">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title" >
+
+                                                    GVT NEWS 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl16" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <hr>
+
                             </div>
                         </div>
 
-                        <div class="row" style="border: 1px solid rgba(1,1,1,0.2);">
 
-                            <div class="col-sm-2 " style="position: relative; border: 1px solid rgba(1,100,1,0.2);">
+                        <div class="row" >
 
-                                <div id="gvt_quest01" data-pos="lu" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
+                            <div class="col-sm-2 " >
+                                <hr>
+                                <div id="gvt_quest011" data-posh="l" data-pos="c" class="hlines">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl17">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title" >
 
-                                         -webkit-transform:rotate(0deg);
+                                                    GVT NEWS 
+                                                    <br><br><br>
+                                                </h4>
+                                            </div>
 
-                                         ">
-
+                                            <div id="hl17" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-sm-2 " style="position: relative; "> 
-                                <div id="gvt_quest02" data-pos="lu" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
-
-                                         -webkit-transform:rotate(0deg);
-
-                                         ">
-
-                                    </div>
-
                                 </div>
                                 <hr>
-                                <div id="gvt_quest03" data-pos="lu" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
+                                <div id="gvt_quest0111" data-posh="l"  data-pos="c" class="hlines">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl10">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
 
-                                         -webkit-transform:rotate(0deg);
+                                                    GVT NEWS big test that one did not 
 
-                                         ">
+                                                </h4>
+                                            </div>
 
+                                            <div id="hl10" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="col-sm-4 " style="position: relative; ">
+                            <div class="col-sm-3 " > 
+                                <hr>
+                                <div id="gvt_quest022" data-posh="l"  data-pos="c" class="hlines">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl12">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    GVT NEWS big test that one did not 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl12" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div id="gvt_quest033" data-posh="l"  data-pos="c" class="hlines">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl11">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    GVT NEWS big test that one did not 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl11" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-2 " >
                                 <h1 class="cover-heading">&nbsp;</h1>
+
                                 <div class="lead" id="earth_center"  title="earth">
-                                    <img class="img-thumbnail"  data-src="holder.js/170x170" 
-                                         alt="170x170" 
-                                         src="img/earth_3d_rgb.jpg"
-                                         style="width: 170px; height: 170px;">
+                                    <a href="#">
+                                        <img class="img-thumbnail"  data-src="holder.js/250x250" 
+                                             alt="250x250" 
+                                             src="img/earth_3d_rgb.jpg"
+                                             style="width: 100%; height: 100%;">
+                                    </a>
                                 </div>
 
                             </div>
-                            <div class="col-sm-2 " style="position: relative; "> 
-                                <div id="gvt_quest11" data-pos="ru" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
+                            <div class="col-sm-3 " > 
+                                <hr>
+                                <div id="gvt_quest11" data-posh="r" data-pos="c" class="hlines" >
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl20">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
 
-                                         -webkit-transform:rotate(0deg);
+                                                    GVT NEWS big test that one did not 
 
-                                         ">
+                                                </h4>
+                                            </div>
 
+                                            <div id="hl20" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="col-sm-2 " style="position: relative; border: 1px solid rgba(1,100,1,0.2);" >
-
-                                <div id="gvt_quest12" data-pos="ru" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
-
-                                         -webkit-transform:rotate(0deg);
-
-                                         ">
-
-                                    </div>
-
                                 </div>
                                 <hr>
-                                <div id="gvt_quest13" data-pos="lu" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
+                                <div id="gvt_quest110" data-posh="r" data-pos="c" class="hlines">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl21">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
 
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
+                                                    GVT NEWS big test that one did not 
 
-                                         -webkit-transform:rotate(0deg);
+                                                </h4>
+                                            </div>
 
-                                         ">
+                                            <div id="hl21" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 " >
+                                <hr>
+                                <div id="gvt_quest12" data-posh="r" data-pos="c" class="hlines"  >
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl22">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
 
+                                                    GVT NEWS big test that one did not 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl22" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div id="gvt_quest13" data-posh="r" data-pos="c" class="hlines" >
+
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl2">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    GVT NEWS big test that one did not 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl2" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -241,58 +517,179 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-1" style="position: relative"></div>
-                            <div class="col-sm-4" style="position: relative">
-                                <div id="gvt_quest21" data-pos="lb" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
 
-                                         -webkit-transform:rotate(0deg);
+                            <div class="col-sm-2" >
+                                <hr>
+                                <div id="gvt_quest21" data-posh="l" data-pos="b" class="hlines" style ="min-height: 170px;" >
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl23">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
 
-                                         ">
+                                                    GVT NEWS big test that one did not 
 
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl23" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-
                                 </div>
+                                <hr>
                             </div>
-                            <div class="col-sm-4" style="position: relative">
-                                <div id="gvt_quest22" data-pos="lb" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
+                            <div class="col-sm-2" >
+                                <hr>
+                                <div id="gvt_quest210" data-posh="l" data-pos="b" class="hlines" style ="min-height: 170px;">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl24">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
 
-                                         -webkit-transform:rotate(0deg);
+                                                    GVT NEWS big test that one did not 
 
-                                         ">
+                                                </h4>
+                                            </div>
 
+                                            <div id="hl24" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-
                                 </div>
+                                <hr>
                             </div>
-                            <div class="col-sm-3" style="position: relative">
-                                <div id="gvt_quest23" data-pos="rb" style="position:relative; width: 70%; height: 70px; background-color: #17a689; border: 1px solid #0f705d;">
-                                    GVT Questions!
-                                    <div class="triangle myarr"  style="
-                                         position: absolute;
-                                         top : 1em;
-                                         left: 1em;
 
-                                         -webkit-transform:rotate(0deg);
+                            <div class="col-sm-4" >
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-6" style="position: inherit">
+                                        <div id="gvt_quest220" data-posv="b" data-pos="r" class="hlines" >
+                                            <div class="panel panel-default">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#hl3">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
 
-                                         ">
+                                                            GVT NEWS big test that one did not 
 
+                                                        </h4>
+                                                    </div>
+
+                                                    <div id="hl3" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" style="position: inherit">
+
+                                        <div id="gvt_quest221" data-posv="b" data-pos="r" class="hlines" >
+                                            <div class="panel panel-default">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#hl4">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+
+                                                            GVT NEWS big test that one did not 
+
+                                                        </h4>
+                                                    </div>
+
+                                                    <div id="hl4" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                        </div>
+                                                    </div></a>
+                                            </div>
+
+
+                                        </div>
                                     </div>
 
+
                                 </div>
+                                <hr>
+                                <div id="gvt_quest22" data-posv="b" data-pos="r" class="hlines" >
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl5">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    GVT NEWS big test that one did not 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl5" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr><hr>
+                            </div>
+                            <div class="col-sm-2" style="position: relative">
+                                <hr>
+                                <div id="gvt_quest230" data-posv="b" data-pos="r" class="hlines" style="min-height: 170px; ">
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl6">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    GVT NEWS big test that one did not 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl6" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <hr>
+                            </div>
+                            <div class="col-sm-2" style="position: relative">
+                                <hr>
+                                <div id="gvt_quest23" data-posh="r" data-pos="b"  class="hlines" style="min-height: 170px; ">
+
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#hl25">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+
+                                                    GVT NEWS big test that one did not 
+
+                                                </h4>
+                                            </div>
+
+                                            <div id="hl25" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche Anim pariatur cliche  Anim pariatur cliche  
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <hr>
                             </div>
                         </div>
 
-                        <canvas id="myCanvas" width="100" height="500" style="
+                        <canvas id="myCanvas" width="0" height="0" style="
                                 position: absolute;
                                 top: 0;
                                 left: 0;
@@ -346,11 +743,12 @@
                 var h = Math.sqrt((hg * hg) + (wd * wd));
 
                 var angle = Math.acos(wd / h);
+
                 var deg = 180 * (angle / Math.PI);
 
                 console.log({rad: angle, deg: deg});
 
-                return deg * getSign(hg);
+                return angle * getSign(hg);
             }
 
             function getCenter(el) {
@@ -385,67 +783,117 @@
 
             /**
              * 
-             * @param {type} deg
+             * @param {type} angle
              * @param {type} elt
-             * @returns {undefined} 
+             * @returns {undefined}
              */
-            function positionArr(deg, elt) {
+            function positionArr(angle, elt) {
 
-                var arr = $(elt).children(".myarr");
+                //make sure no other similar element is attached 
+                $(elt).remove(".myarr1");
 
-                var angle = (deg < 0) ? 360 + deg : deg;
-                var wpos = true, hpos = true;
-                if (($(elt).attr("data-pos") === "lb") || ($(elt).attr("data-pos") === "rb")) {
-                    hpos = false;
+                var a = 10, h = 20;
+                var arrow = '<span class="triangle1 myarr1"  style="' +
+                        'position: absolute;' +
+                        '"></span>';
+                $(elt).append(arrow);
+                var arr = $(elt).children(".myarr1");
+
+                var y = (h / Math.tan(angle)) + a;
+                var x = a - (h / Math.tan(angle));
+
+                //fix x and y between 0 and 50
+                y = (y > h) ? h : y;
+                y = (y < 0) ? 0 : y;
+                x = (x > h) ? h : x;
+                x = (x < 0) ? 0 : x;
+
+
+
+                //var angle = 0;
+                switch ($(elt).attr("data-pos")) {
+                    case "u":
+                        $(arr).css({bottom: '0em'});
+
+                        break;
+                    case "b":
+                        $(arr).css({top: '0em'});
+
+                        break;
+                    case "l":
+                        $(arr).css({right: '1em'});
+                        break;
+                    case "r":
+                        $(arr).css({left: '1em'});
+                        break;
+                    case "c":
+                        $(arr).css({top: (($(elt).outerHeight() - $(arr).outerHeight()) / 2) + "px"});
+                        break;
                 }
 
-                if (($(elt).attr("data-pos") === "ru") || ($(elt).attr("data-pos") === "rb")) {
-                    wpos = false;
-                    console.log($(elt).attr("data-pos"));
+
+                switch ($(elt).attr("data-posv")) {
+                    case "u":
+
+                        $(arr).css({
+                            bottom: '-' + h + 'px',
+                            "border-top": h + "px solid rgba(151, 164, 165, 0.94)", // + $(elt).css('background-color'),
+                            "border-bottom": "0"
+                        });
+                        $(arr).css({
+                            "border-right": x.toFixed(0) + "px solid transparent",
+                            "border-left": y.toFixed(0) + "px solid transparent"
+                                    //"border-left": arrWd + "px solid #BDC3C7"
+                        });
+                        break;
+                    case "b":
+                        $(arr).css({
+                            top: '-' + h + 'px',
+                            "border-bottom": h + "px solid rgba(151, 164, 165, 0.94)", // + $(elt).css('background-color'),
+                            "border-top": "0"
+                        });
+                        $(arr).css({
+                            "border-left": x.toFixed(0) + "px solid transparent",
+                            "border-right": y.toFixed(0) + "px solid transparent"
+                                    //"border-left": arrWd + "px solid #BDC3C7"
+                        });
+                        break;
+
                 }
 
-                var arrWd = 25;
+                switch ($(elt).attr("data-posh")) {
+                    case "l":
+                        $(arr).css({
+                            right: '-' + h + 'px',
+                            "border-left": h + "px solid rgba(151, 164, 165, 0.94)", // + $(elt).css('background-color'),
+                            "border-right": "0"
+                        });
+                        $(arr).css({
+                            "border-bottom": x.toFixed(0) + "px solid transparent",
+                            "border-top": y.toFixed(0) + "px solid transparent"
+                                    //"border-left": arrWd + "px solid #BDC3C7"
+                        });
+                        break;
 
-                var halfH = computeOpen(elt);
-                var x = 180 - (2 * halfH);
+                    case "r":
+                        $(arr).css({
+                            left: '-' + h + 'px',
+                            "border-right": h + "px solid rgba(151, 164, 165, 0.94)", // + $(elt).css('background-color'),
+                            "border-left": "0"
+                        });
+                        $(arr).css({
+                            "border-bottom": y.toFixed(0) + "px solid transparent",
+                            "border-top": x.toFixed(0) + "px solid transparent"
+                                    //"border-left": arrWd + "px solid #BDC3C7"
+                        });
+                        break;
 
-                var c1 = halfH, c2 = x + halfH, c3 = x + (3 * halfH), c4 = 390 - halfH;
-
-                var cx = 0;
-                var cy = 0;
-                if (((-halfH) < angle && angle < c1)) {
-                    angle = 0;
-                    cx = $(elt).innerWidth();
-
-                } else if ((c2 < angle && angle < c3)) {
-                    angle = 180;
-                    cx = 0 - $(arr).outerWidth();
-
-                } else if ((c1 < angle && angle < c2)) {
-                    angle = 90;
-                    cy = $(elt).innerHeight();
-                } else if ((c3 < angle && angle < c4)) {
-
-                    angle = 270;
-                    cy = 0 - $(elt).innerHeight()/2 ;
                 }
 
-               
-                console.log(deg);
-                console.log(angle);
 
 
-
-                // var cx = $(elt).innerWidth() / 2 - ($(arr).outerWidth() / 2);
-                // var cy = $(elt).innerHeight() / 2 - ($(arr).outerHeight() / 2);
-                $(arr).css({
-                    top: cy + "px",
-                    left: cx + "px",
-                    "border-left": arrWd + "px solid #BDC3C7"
-                });
-
-                $(arr).css({"-webkit-transform": "rotate(" + angle + "deg)"});
-
+                console.log($(elt).attr("data-pos"));
+                console.log(x.toFixed(0));
 
 
 
@@ -456,31 +904,25 @@
                 return p / Math.abs(p);
             }
 
-            var elts = ["#gvt_quest01", "#gvt_quest02", "#gvt_quest03", "#gvt_quest11", "#gvt_quest12", "#gvt_quest13", "#gvt_quest23", "#gvt_quest21", "#gvt_quest22"];
-
-
-
+            var elts = ["#gvt_quest01", "#gvt_quest02", "#gvt_quest02l", "#gvt_quest03", "#gvt_quest03l", "#gvt_quest04", "#gvt_quest21", "#gvt_quest22", "#gvt_quest23",
+                "#gvt_quest011", "#gvt_quest033", "#gvt_quest13", "#gvt_quest11", "#gvt_quest12", "#gvt_quest022"];
 
 
             $(window).resize(function() {
-                var i;
-                for (i = 0; i < elts.length; i++) {
-                    var center = getCenter("#earth_center");
-                    var elt = getCenter(elts[i]);
 
-                    //if (c === null)
-
-                    //if (ctx === null)
-
-                    //update canvas size
-                    //c.width = $(elts[i]).offsetParent().offsetParent().innerWidth();
-                    //c.height = $(elts[i]).offsetParent().offsetParent().innerHeight();
-
-                    var an = compDegree(center, elt);
-                    positionArr(an, elts[i]);
-                    //testLine({sx: elt.cx, sy: elt.cy, ex: center.cx, ey: center.cy});
-                }
             });
+
+            var center = getCenter("#earth_center");
+            $(".hlines").each(function() {
+                console.log(this);
+                var elt = getCenter(this);
+
+                var an = compDegree(center, elt);
+                positionArr(an, this);
+            });
+
+
+            //testLine({sx: elt.cx, sy: elt.cy, ex: center.cx, ey: center.cy});
 
         </script>
 
