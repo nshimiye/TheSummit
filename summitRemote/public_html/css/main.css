@@ -4,10 +4,14 @@
     Author     : mars
 */
 
-*{
+#intest{
     transition: border .25s linear, 
         box-shadow 0.5s linear,
         color .25s linear, 
+        top .25s linear, 
+        left .25s linear, 
+        width .25s linear, 
+        height .25s linear, 
         background-color .25s linear;
 }
 
@@ -49,25 +53,25 @@
 }
 
 .hlines{
-    
+
     position: relative;
     font-size: 1.2em;
-    
+
     width: 100%;
     -moz-box-shadow: 0 0 20px 0  #2c3e50;
     -webkit-box-shadow: 0 0 20px 0  #2c3e50;
     box-shadow: 0 0 5px 0  #2c3e50;
 
     border: none;
-     overflow-y: visible;
+    overflow-y: visible;
 }
 
 .hlines:hover{
     -moz-box-shadow: 0 0 20px 0  #2c3e50;
     -webkit-box-shadow: 0 0 20px 0  #2c3e50;
     box-shadow: 0 15px 15px 0  #2c3e50;
-    
-    
+
+
 } 
 
 .hlines a {
@@ -76,48 +80,71 @@
 
 .hlines .panel-heading {
     color: black;
-   
+
     background-color: rgba(151, 164, 165, 0.55);
     border-color: rgba(151, 164, 165, 0.94);
     padding: 1em;
 }
 
 .hlines .panel-title {
-     font-size: 1.5em;
-     font-weight: 300;
+    font-size: 1.5em;
+    font-weight: 300;
 }
 
 
 /*
  Autocomplete styling here
- */
- 
- .autocmp{
-     position: absolute; 
-     top: 1.8em; 
-     left: 0.5%; 
-     background-color: white; 
-     width: 99%; 
-     z-index: 9; 
-     font-size: 1.3em;
-     font-weight: 400;
-     
-     box-shadow: 0 0 10px 0 #2c3e50;
-     
- }
- .autocmp a {
-     text-decoration: none;
-     color: rgba(47, 65, 84,1);
- }
-  a .auto-view:hover{
-background-color: rgba(181, 187, 192, 1);
+*/
 
- 
- }
-  
- a .auto-view{
-     border-bottom: 1px solid rgba(189, 195, 199, 1); 
-     width: 100%; 
-     padding: 0.5em; 
-     overflow: hidden;
- }
+.autocmp{
+    position: absolute; 
+    top: 1.8em; 
+    left: 0.5%; 
+    background-color: white; 
+    width: 99%; 
+    z-index: 9; 
+    font-size: 1.3em;
+    font-weight: 400;
+
+    box-shadow: 0 0 10px 0 #2c3e50;
+
+}
+.autocmp a {
+    text-decoration: none;
+    color: rgba(47, 65, 84,1);
+}
+a .auto-view:hover{
+    background-color: rgba(181, 187, 192, 1);
+
+
+}
+
+a .auto-view{
+    border-bottom: 1px solid rgba(189, 195, 199, 1); 
+    width: 100%; 
+    padding: 0.5em; 
+    overflow: hidden;
+}
+
+/******************************/
+/*
+ * result page style
+ */
+
+.results-here a .result-inner:hover{
+    background-color: rgba(181, 187, 192, 0.1);
+
+    -moz-box-shadow: inset 0 -5px 5px rgba(181, 187, 192, 0.7);
+    -webkit-box-shadow: inset 0 -5px 5px rgba(181, 187, 192, 0.7);
+    box-shadow: inset 0 -5px 5px rgba(181, 187, 192, 0.7);
+}
+.results-here a{
+    text-decoration: none;
+}
+.results-here a .result-inner{
+    border-bottom: 2px solid grey;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    font-size: 1.5em;
+    color: rgba(47, 65, 84,1);
+}

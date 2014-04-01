@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+        login.html
+        
+        created at Apr 1, 2014
+        @author: Marcellin N. <nshimiye@ovi.com>
+
+        This file is a property of Marcellin N.
+
+        copy from
+ - login_page.js
+ -
+ - Created on __Aug 25, 2013__, __1:58:56 AM__
+-->
+
+<html>
+    <head>
+
+        <title> EWB Storage</title>
+
+        <link rel="stylesheet" href="css/boot/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/main.css" type="text/css"/>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div style="height: 70px; width: 100%"></div>
+
+        <!--container should be in the layout-->
+        <div class="container" style="min-height: 500px;">
+            <div id="title1" class="row">
+                <span id="title10">Authentication</span>
+            </div>
+            <hr/>
+            <!--content goes here-->
+            <div id="login1" class="row" style="display: block;">
+                <div id="login11" class="col-md-6 col-md-offset-3">
+
+                    <form class="form-horizontal" action="#">
+                        <div class="form-group">
+                            <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-5">
+                                <input type="email" class="form-control" id="inputEmail1" placeholder="Email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
+                            <div class="col-lg-5">
+                                <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                            </div>
+                        </div>
+<!--                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="submit" class="btn btn-default btn-primary">Sign in</button>
+                                <a href="register_page.html" class="btn btn-default">Sign up</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--------register here ------>
+
+            <div id="register1" class="row" style="display: none;">
+                <div id="register11" class="col-md-6 col-md-offset-3">
+
+                    <form class="form-horizontal" action="#">
+                        <div class="form-group">
+                            <label for="flname" class="col-lg-3 control-label">Full Name</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" id="flname" placeholder="John Smith"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail1" class="col-lg-3 control-label">Email</label>
+                            <div class="col-lg-5">
+                                <input type="email" class="form-control" id="inputEmail1" placeholder="Email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="village_id" class="col-lg-3 control-label">Member of</label>
+                            <div class="col-lg-5">
+                 
+
+                                <div class="btn-group">
+                                    <button type="button" id="belong1" class="form-control btn btn-default dropdown-toggle col-lg-4" data-toggle="dropdown">
+                                        Where do you belong ? <span class="caret"></span>
+                                    </button>
+                                    <ul id="belong10" class="dropdown-menu" role="menu">
+                                        <li><a href="#javascript().void()" id="belong11" data-val="Ewb">Ewb</a></li>
+                                        <li><a href="#javascript().void()" id="belong12" data-val="Pilgrim">Pilgrim</a></li>
+                                        <li><a href="#javascript().void()" id="belong13" data-val="Uganda Community">Uganda Community</a></li>
+                                        <li><a href="#javascript().void()" id="belong14" data-val="none">none</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="submit" class="btn btn-primary col-lg-3">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div> 
+        <!--end of container-->
+
+        <footer >
+
+        </footer>
+
+        <script language="javascript" type="text/javascript" src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/base.js"></script>
+        <script language="javascript" type="text/javascript" src="js/bootstrap.min.js"></script>
+    </body>
+</html>

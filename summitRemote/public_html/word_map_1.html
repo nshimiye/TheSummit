@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+
+        <link href="css/boot/cover.css" rel="stylesheet">
+
+        <link href="css/bbl.css" rel="stylesheet">
+
+        <script src="js/libs/raphael/raphael.js" type="text/javascript"></script>
+        <script src="js/libs/raphael/world_1000.js" type="text/javascript"></script>
+
+        <script src="js/libs/jquery/jquery.js"></script>
+        <script src="css/boot/js/bootstrap.js"></script>
+
+        <script type="text/javascript">
+            (function($) {
+                var myLoc = {};
+
+                var cities = {};
+
+
+
+
+
+
+                window.onload = function() {
+                    var current = null;
+                    var map = {};
+                    var m = {};
+                    var attr = {
+                        fill: "#333",
+                        stroke: "#888",
+                        "stroke-width": .5,
+                        "stroke-linejoin": "round"
+                    };
+                    var map = {};
+
+                    var width = document.getElementById('holder_1000').style.width;
+                    var height = document.getElementById('holder_1000').style.height * 0.99;
+
+                    var svgHeight = 400;
+                    var svgWidth = 1000;
+
+                    var R = Raphael("holder_1000", "100%", "100%");
+
+                    R.setViewBox(0, 0, svgWidth, svgHeight, true);
+
+                    render_map(R, map, attr);
+                    for (var state in map) {
+                        map[state].color = Raphael.getColor();
+                        (function(st, state) {
+                            st[0].style.cursor = "pointer";
+                            st[0].onmouseover = function() {
+                                current && map[current].animate({fill: "#333", stroke: "#666"}, 300);
+                                st.animate({fill: st.color, stroke: "#ccc"}, 300);
+                                R.safari();
+                                current = state;
+                            };
+                            st[0].onmouseout = function() {
+                                st.animate({fill: "#333", stroke: "#666"}, 300);
+                                R.safari();
+                            };
+
+                            st[0].onclick = function() {
+                                alert(state);
+                            };
+                        })(map[state], state);
+                    }
+                    ; // end for
+
+
+
+                    function lon2x(lon) {
+                        var xfactor = 2.752;
+                        var xoffset = 473.75;
+                        var x = (lon * xfactor) + xoffset;
+                        return x;
+                    }
+                    function lat2y(lat) {
+                        var yfactor = -2.753;
+                        var yoffset = 231;
+                        var y = (lat * yfactor) + yoffset;
+                        return y;
+                    }
+
+                    var city_attr = {
+                        fill: "#0f0",
+                        stroke: "none",
+                        opacity: .3
+                    };
+                    function plot(lat, lon, size) {
+                        size = size * .5 + 4;
+                        return R.circle(lon2x(lon), lat2y(lat), size).attr(city_attr);
+                    }
+
+
+//                var cities = {};
+                    var cl = {};
+                    cities.Afghanistan = plot(33.93911, 67.709953, 10);
+                    console.log(cities.Afghanistan.node.cx.animVal.valueAsString);
+                    cl.Afghanistan = {x: cities.Afghanistan.node.cx.animVal.valueAsString, y: cities.Afghanistan.node.cy.animVal.valueAsString};
+                    cities.Afg = plot(0, 0, 10);
+                     cl.Afg = plot(0, 0, 10);
+
+
+//                 cities.myLoc = plot(myLoc.ltt, myLoc.lng, 20);
+
+                    var current_city = null;
+                    var city_box = null;
+                    for (var city in cities) {
+                        console.log(city);
+                        map[state].color = Raphael.getColor();
+                        (function(st, city) {
+                            st[0].style.cursor = "pointer";
+                            st[0].onmouseover = function() {
+                                current_city && cities[current_city].animate({fill: "#0f0", opacity: .3}, 300);
+                                st.animate({fill: "#0f0", opacity: 1}, 300);
+                                R.safari();
+                                current_city = city;
+                            };
+                            st[0].onmouseout = function() {
+                                st.animate({fill: "#0f0", opacity: .3}, 300);
+                                R.safari();
+                            };
+
+                            st[0].onclick = function() {
+                                if (t = document.getElementById(city_box)) {
+                                    t.style.display = "none";
+                                }
+                                if (t = document.getElementById(city)) {
+                                    t.style.display = "block";
+                                }
+                                city_box = city;
+                                console.log(cities.Afghanistan);
+                                $(".testb1").css({top: cl.Afghanistan.y + "px", left: cl.Afghanistan.x + "px"});
+                            };
+
+
+                            if (t = document.getElementById(city)) {
+                                t.style.left = cities[city].attr('cx') + 'px';
+                                t.style.top = cities[city].attr('cy') - 20 + 'px';
+                            }
+
+                        })(cities[city], city);
+                    }
+                    ; // end for
+
+                    function handlePosition(location) {
+
+                        myLoc = {ltt: location.coords.latitude, lng: location.coords.longitude};
+                        console.log({ltt: location.coords.latitude, y: location.coords.longitude});
+
+                        cities.myloc = plot(myLoc.ltt, myLoc.lng, 20);
+
+                        map[state].color = Raphael.getColor();
+                        (function(st, city) {
+                            st[0].style.cursor = "pointer";
+                            st[0].onmouseover = function() {
+                                current_city && cities[current_city].animate({fill: "#0f0", opacity: .3}, 300);
+                                st.animate({fill: "#0f0", opacity: 1}, 300);
+                                R.safari();
+                                current_city = city;
+                            };
+                            st[0].onmouseout = function() {
+                                st.animate({fill: "#0f0", opacity: .3}, 300);
+                                R.safari();
+                            };
+
+                            st[0].onclick = function() {
+
+                                if (t = document.getElementById(city_box)) {
+                                    t.style.display = "none";
+                                }
+                                if (t = document.getElementById(city)) {
+                                    t.style.display = "block";
+                                }
+                                city_box = city;
+                                console.log(city);
+                            };
+
+
+                            if (t = document.getElementById(city)) {
+                                t.style.left = cities[city].attr('cx') + 'px';
+                                t.style.top = cities[city].attr('cy') - 20 + 'px';
+                            }
+
+                        })(cities["myloc"], "myloc");
+
+
+                    }
+                    
+                    function getLocation()
+                    {
+                        var myloc = null;
+                        if (navigator.geolocation)
+                        {
+                            navigator.geolocation.getCurrentPosition(handlePosition, onError);
+
+                        }
+                        else {
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
+
+                    }
+                    function onError() {
+                        console.log("ghgfh fhg");
+                    }
+                    getLocation();
+
+                };
+
+            })(jQuery);
+        </script>
+    </head>
+
+    <body  style="background-color: #333333">
+        <div id="holder_1000" style="position:relative;">
+
+             <div class="triangle-right left testb1" style="
+             position: absolute; 
+             top:130px;
+             left: 860px;
+             
+             
+             ">
+                 <!--hererererer??????????????-->
+            USER12
+            <br>20 comments
+            <br>...
+            <br>
+
+        </div>
+            
+        </div>
+       
+    </body>
+</html>

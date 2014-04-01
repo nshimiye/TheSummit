@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+        word_map.html
+        
+        created at Mar 30, 2014
+        @author: Marcellin N. <nshimiye@ovi.com>
+
+        This file is a property of Marcellin N.
+-->
+<html>
+    <head>
+        <title>The Summit</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <!-- Bootstrap core CSS -->
+        <link href="css/boot/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            html, body, #map-canvas {
+                height: 100%;
+                margin: 0px;
+                padding: 0px
+            }
+
+            .maptri{
+
+                width: 0;
+                height: 0;
+
+                border-top: 50px solid gray;
+                border-bottom: 0;
+                border-right: 10px solid transparent;
+                border-left:  10px solid transparent; 
+
+                z-index: 2000;
+
+            }
+
+            .maptri1{
+
+                width: 20px;
+                height:20px;
+            }
+
+        </style>
+        <script src="js/libs/jquery/jquery.js"></script>
+        <script src="css/boot/js/bootstrap.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+
+        <script>
+            var map;
+
+            var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+            var anchorage = new google.maps.LatLng(61.2180556, -149.9002778);
+            var mexico = new google.maps.LatLng(19.4270499, -99.1275711);
+            var equator = new google.maps.LatLng(0, 0);
+            var london = new google.maps.LatLng(51.5001524, -0.1262362);
+            var johannesburg = new google.maps.LatLng(-26.201452, 28.045488);
+            var kinshasa = new google.maps.LatLng(-4.325, 15.322222);
+            var sydney = new google.maps.LatLng(-33.867139, 151.207114);
+
+            var locationArray = [chicago, anchorage, mexico, equator, london, johannesburg, kinshasa, sydney];
+            var locationNameArray = ['Chicago', 'Anchorage', 'Mexico City', 'The Equator', 'London', 'Johannesburg', 'Kinshasa', 'Sydney'];
+
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 3,
+                    center: new google.maps.LatLng(20, 15),
+                    panControl: false,
+                    zoomControl: false,
+                    scaleControl: true
+                };
+
+                map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapOptions);
+
+
+
+
+                drop(); //animate
+            }
+
+
+            function drop() {
+                for (var i = 0; i < locationArray.length; i++) {
+
+                    setTimeout(function() {
+
+
+                        addMarker();
+                        console.log(i);
+
+                    }, i * 200);
+
+                }
+            }
+
+
+            var coord = 0;
+            var markers = [];
+
+            function addMarker() {
+
+
+
+                placeMarker(locationArray[coord], map, locationNameArray[coord]);
+                coord++;
+            }
+
+            /**
+             * create a marker 
+             * @param {type} position
+             * @param {type} map
+             * @param {type} title
+             * @returns {undefined}
+             */
+            function placeMarker(position, map, title) {
+     
+                    var icon =
+                            "https://chart.googleapis.com/chart?chst=d_fnote_title&chld=balloon|1|555555|l|Joe%27s|Today+2-for-1+!|555-1234";
+
+
+                var marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: title,
+                    pixelOffset: new google.maps.Size(0, 750),
+                    visible: true,
+                    icon: icon,
+                    draggable: false,
+                    animation: google.maps.Animation.DROP
+                });
+//                map.panTo(position);
+                attachSecretMessage(marker);
+            }
+
+// The five markers show a secret message when clicked
+// but that message is not within the marker's instance data
+            function attachSecretMessage(marker) {
+
+                var contentString =
+                        ' <div class="maptri1">' +
+                        ' dgdfgd </div>';
+
+
+
+                //infowindow.open(marker.get('map'), marker);
+
+                google.maps.event.addListener(marker, 'click', function(event) {
+                    
+                    console.log('Point.X.Y: ' + event.latLng);
+                });
+
+            }
+            (function($) {
+                $(document).ready(function() {
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                });
+
+            })(jQuery);
+
+
+        </script>
+    </head>
+    <body>
+
+        <div style="
+             position: absolute;
+             top: 0;
+             left: 0;
+             background-color: rgba(0,0,0,0.5);
+             background-size: cover;
+             height: 10%;
+             width: 10%;
+             z-index: 1000;
+             "></div>
+
+
+        <div id="map-canvas"></div>
+
+
+
+    </body>
+</html>

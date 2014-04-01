@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!--
+        word_map.html
+        
+        created at Mar 30, 2014
+        @author: Marcellin N. <nshimiye@ovi.com>
+
+        This file is a property of Marcellin N.
+-->
+<html>
+    <head>
+        <title>The Summit</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <!-- Bootstrap core CSS -->
+        <link href="css/boot/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <style>
+            html, body, #map-canvas {
+                height: 100%;
+                margin: 0px;
+                padding: 0px
+            }
+
+            .maptri{
+
+                width: 0;
+                height: 0;
+
+                border-top: 50px solid gray;
+                border-bottom: 0;
+                border-right: 10px solid transparent;
+                border-left:  10px solid transparent; 
+
+                z-index: 2000;
+
+            }
+
+            .maptri1{
+
+                width: 20px;
+                height:20px;
+            }
+
+        </style>
+        <script src="js/libs/jquery/jquery.js"></script>
+        <script src="css/boot/js/bootstrap.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+        <script>
+            var map;
+
+            var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+            var anchorage = new google.maps.LatLng(61.2180556, -149.9002778);
+            var mexico = new google.maps.LatLng(19.4270499, -99.1275711);
+            var equator = new google.maps.LatLng(0, 0);
+            var london = new google.maps.LatLng(51.5001524, -0.1262362);
+            var johannesburg = new google.maps.LatLng(-26.201452, 28.045488);
+            var kinshasa = new google.maps.LatLng(-4.325, 15.322222);
+            var sydney = new google.maps.LatLng(-33.867139, 151.207114);
+
+            var locationArray = [chicago, anchorage, mexico, equator, london, johannesburg, kinshasa, sydney];
+            var locationNameArray = ['Chicago', 'Anchorage', 'Mexico City', 'The Equator', 'London', 'Johannesburg', 'Kinshasa', 'Sydney'];
+
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 3,
+                    center: new google.maps.LatLng(20, 15),
+                    panControl: false,
+                    zoomControl: false,
+                    scaleControl: true
+                };
+
+                map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapOptions);
+//                drop(); //animate
+
+                cls = {rd: 250, bl: 200};
+                for (var c in locationArray) {
+                    overlay = new Summit(getbds(locationArray[c], 5), null, map, cls);
+                }
+            }
+            var cls = {rd: 250, bl: 100}; //hold color values
+            var overlay;
+            Summit.prototype = new google.maps.OverlayView();
+
+
+            //----------------my location -----------
+            function getLocation()
+            {
+                if (navigator.geolocation)
+                {
+                    navigator.geolocation.getCurrentPosition(function(location) {
+                        var myLoc = {ltt: location.coords.latitude, lng: location.coords.longitude};
+                        console.log({ltt: location.coords.latitude, y: location.coords.longitude});
+
+                        //here we draw your presence on map
+                        var mylc = new google.maps.LatLng(myLoc.ltt, myLoc.lng);
+                        overlay = new Summit(getbds(mylc, 5), null, map, cls);
+
+                    }, onError);
+
+                }
+                else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+
+            }
+            function onError() {
+                console.log("ghgfh fhg");
+            }
+            getLocation();
+            //---------------------------------------
+
+
+
+            /**
+             * create a bounded area for the overlay
+             * @param {type} x : longitude
+             * @param {type} y : latitude
+             * @param {type} size
+             * @returns {google.maps.LatLngBounds}
+             */
+            function getbds(point, size) {
+                x = point.A, y = point.k;
+                var sw = {lng: x - (size / 2), lat: y - (size / 2)};
+                var ne = {lng: x + (size / 2), lat: y + (size / 2)};
+                var swBound = new google.maps.LatLng(sw.lat, sw.lng);
+                var neBound = new google.maps.LatLng(ne.lat, ne.lng);
+                var bounds = new google.maps.LatLngBounds(swBound, neBound);
+                return bounds;
+            }
+
+
+
+            //-------------- overlay ------------------------
+// [START region_constructor]
+            /** @constructor */
+            function Summit(bounds, image, map, cl) {
+
+                // Initialize all properties.
+                this.bounds_ = bounds;
+                this.image_ = image;
+                this.map_ = map;
+
+                this.bl = cl.bl;
+                this.rd = cl.rd;
+                cl.rd = (cl.rd > 0) ? cl.rd - 10 : 0;
+                cl.bl = (cl.bl < 255) ? cl.bl + 10 : 255;
+                // Define a property to hold the image's div. We'll
+                // actually create this div upon receipt of the onAdd()
+                // method so we'll leave it null for now.
+                this.div_ = null;
+
+                // Explicitly call setMap on this overlay.
+                this.setMap(map);
+            }
+// [END region_constructor]
+            // [START region_attachment]
+            /**
+             * onAdd is called when the map's panes are ready and the overlay has been
+             * added to the map.
+             */
+            Summit.prototype.onAdd = function() {
+
+                var div = document.createElement('div');
+                div.style.borderStyle = 'solid';
+                div.style.borderWidth = '3px';
+                div.style.borderColor = "rgba(" + this.rd + ",150," + this.bl + ",0.9)";
+                div.style.position = 'absolute';
+                div.style.borderRadius = "50%";
+                div.style.zIndex = 100;
+
+                console.log("bite sha");
+                // Create the img element and attach it to the div.
+                var img = document.createElement('div');
+                img.style.background = "rgba(" + this.rd + ",150," + this.bl + ",0.5)";
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.borderRadius = "50%";
+                img.style.position = 'absolute';
+                div.appendChild(img);
+
+                var mypanel = $('<span></span>');
+
+                mypanel.css({
+                    background: "rgba(" + this.rd + " ,150," + this.bl + ",0.2)",
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    "border-radius": "50%",
+                    "font-size": "1.2em",
+                    color: "rgba(240,250,250,1)",
+                    cursor: "pointer",
+                    "z-index": 100
+                });
+
+                console.log(mypanel.html());
+                mypanel.appendTo(div);
+
+                this.div_ = div;
+
+                // Add the element to the "overlayLayer" pane.
+                var panes = this.getPanes();
+
+                //panes.overlayLayer.appendChild(div);
+//                console.log(panes);console.log(div);
+//add element to clickable layer 
+                panes.overlayMouseTarget.appendChild(div);
+
+// set this as locally scoped var so event does not get confused
+                //var me = this;
+
+// Add a listener - we'll accept clicks anywhere on this div, but you may want
+// to validate the click i.e. verify it occurred in some portion of your overlay.
+                google.maps.event.addDomListener(div, 'mouseenter', function() {
+                    //google.maps.event.trigger(me, 'click');
+//                    console.log(div.style.left, div.style.top);
+                    expandOnEvent(div, 50, 50);
+//                    console.log(div.style.width, "div.style.top");
+
+
+
+                });
+
+                google.maps.event.addDomListener(div, 'mouseleave', function() {
+                    //google.maps.event.trigger(me, 'click');
+
+                    restoreOnEvent(div);
+
+                });
+
+                google.maps.event.addDomListener(div, 'click', function(evt) {
+                    var x = evt.clientX;
+                    var y = evt.clientY;
+                    var tp = $(div).position().top + 50; //we need to get data of this person
+                    $("#intest").css({
+                        display: "block",
+                        top: (y + 25) + "px",
+                        left: (x - 15) + "px"});
+
+//                    console.log($("#intest").children());
+
+                });
+            };
+
+            SAVE = null;
+            function expandOnEvent(elt, wd, ht) {
+                var wd1 = wd + $(elt).outerWidth();
+                var ht1 = ht + $(elt).outerHeight();
+
+                SAVE = {lft: $(elt).position().left, tp: $(elt).position().top,
+                    wd: elt.style.width, ht: elt.style.height};
+
+                $(elt).css({left: (SAVE.lft - (wd / 2)) + "px"});
+                elt.style.width = wd1 + "px";
+
+                $(elt).css({top: (SAVE.tp - (ht / 2)) + "px", "border-radius": "0", background: "rgba(60,80,120,0.8)"});
+                elt.style.height = ht1 + "px";
+                $($(elt).children().get(1)).html("<span style='font-size: 2em; font-weight: bolder'>500 cts</span>");
+            }
+
+            function restoreOnEvent(elt) {
+                if (SAVE !== null) {
+                    $(elt).css({left: SAVE.lft + "px"});
+                    elt.style.width = SAVE.wd;
+
+                    $(elt).css({top: SAVE.tp + "px", "border-radius": "50%", background: "transperent"});
+                    elt.style.height = SAVE.ht;
+                    $($(elt).children().get(1)).html("");
+                    SAVE = null;
+                }
+            }
+// [START region_drawing]
+            Summit.prototype.draw = function() {
+
+                // We use the south-west and north-east
+                // coordinates of the overlay to peg it to the correct position and size.
+                // To do this, we need to retrieve the projection from the overlay.
+                var overlayProjection = this.getProjection();
+
+                // Retrieve the south-west and north-east coordinates of this overlay
+                // in LatLngs and convert them to pixel coordinates.
+                // We'll use these coordinates to resize the div.
+                var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
+                var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
+                console.log(this.bounds_.getCenter());
+                // Resize the image's div to fit the indicated dimensions.
+                var div = this.div_;
+                div.style.left = sw.x + 'px';
+                div.style.top = ne.y + 'px';
+                div.style.width = (ne.x - sw.x) + 'px';
+                div.style.height = (sw.y - ne.y) + 'px';
+            };
+// [END region_drawing]
+
+// [START region_removal]
+// The onRemove() method will be called automatically from the API if
+// we ever set the overlay's map property to 'null'.
+            Summit.prototype.onRemove = function() {
+                this.div_.parentNode.removeChild(this.div_);
+                this.div_ = null;
+            };
+// [END region_removal
+            //------------- ---------------------------------
+
+
+            (function($) {
+                $(document).ready(function() {
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                });
+
+                /**
+                 * if mouse in, we set a value to true
+                 */
+                var closepop = false;
+
+                /**
+                 * we check the value for truth and then close the popup window
+                 */
+
+
+            })(jQuery);
+
+            /**
+             * Not in use ofr now
+             * We need to close the comment box if user is not checking it
+             * @type Boolean|Boolean|Boolean
+             */
+            var closepop = false;
+            function qtest() {
+                if (!closepop) {
+                    closepop = true;
+                    console.log("what??????????");
+                }
+            }
+
+            function closePop() {
+                if (closepop) {
+                    $("#intest").css({display: "none"});
+                    closepop = false;
+                    console.log("what??????????");
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+
+        <div id="map-canvas"></div>
+
+        <div style="
+             position: absolute; 
+             top: 0; left: 0; 
+             background-color: rgba(0,0,0,0.3); 
+             height: 100%;
+             width: 100%;
+             z-index: -11;
+             cursor: pointer;
+             "></div>
+
+        <div style="background: transparent; 
+             position: fixed; 
+             top:0px; 
+             left:0px;
+             width: 300px;
+             height: auto;
+             overflow-y: visible;
+             font-size: 1em;
+             text-align: center;
+             " id="intest" >
+            <div
+                style="
+                position: absolute;
+                top:-30px;
+                left:10px;
+                width: 0;
+                height: 0;
+                border-bottom: 30px solid rgba(47, 65, 84, 0.5);
+                border-top: 0;
+                border-right: 10px solid transparent;
+                border-left: 10px solid transparent;
+                "
+                ></div>
+
+
+            <div id="autocmp1" class="autocmp" style=" top: 0; 
+                 left: 0;" >
+                <a href="test.html" >
+                    <div class="auto-view">
+                        click circle for more
+                    </div>
+                </a>
+                <a href="#" >
+                    <div class="auto-view">comment 2</div></a>
+                <a href="#" >
+                    <div class="auto-view">comment 2</div></a>
+                <a href="#" >
+                    <div class="auto-view">comment 2</div></a>
+            </div>
+
+        </div>
+
+
+
+    </body>
+</html>
