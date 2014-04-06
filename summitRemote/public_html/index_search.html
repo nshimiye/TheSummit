@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--
+        home.html
+        created at Mar 22, 2014
+        @author: Marcellin N. <nshimiye@ovi.com>
+
+        This file is a property of Marcellin N.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="ico/favicon.ico">
+
+        <title>The Summit</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/boot/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!-- Custom styles for this template -->
+        <link href="css/boot/cover.css" rel="stylesheet">
+
+        <link href="css/main.css" rel="stylesheet">
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,700,900' rel='stylesheet' type='text/css'>
+        <style>
+            .allback { 
+                background: url(img/sky_and_horizon_1024_by_619.jpg) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="site-wrapper">
+
+            <div class="site-wrapper-inner">
+
+                <div class="cover-container" >
+                    <!-----------fixed header here----------->
+
+                    <div id="mhead" class="masthead clearfix" style="
+                         border-radius:1em;
+
+                         top: 1em;
+
+                         background-color: rgba(181, 187, 192, 1);
+                         color: rgba(47, 65, 84,1);
+                         padding-bottom: 1em;
+                         z-index: 100;
+                         min-width: 50px;
+                         min-height: 7em;
+                         ">
+
+                        <div class="inner">
+                            <div class="col-lg-3">
+                                <h3 class="" style=" font-weight: 300; font-size: 3em;">THE Summit</h3>
+                            </div>
+                            <div class="col-lg-6 " style=" position: relative; top: 1.5em; padding-left: 0; padding-right: 0;">
+                                <form class="search_form">
+                                    <div class="input-group" style=" z-index: 10;">
+
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-default">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                            <!--                                            <a href="#/question/search/hi"  class="btn btn-default form_elt search_btn">
+                                                                                            <span class="glyphicon glyphicon-search"></span>
+                                                                                        </a>-->
+
+                                        </span>
+                                        <input type="text" class="form-control form_elt search_in" placeholder="Search" required="required">
+                                        <span class="input-group-btn" >
+                                            <button class="btn btn-primary form_elt question_save" type="button" disabled="disabled">
+                                                &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp;
+                                            </button>
+                                        </span>
+
+                                    </div><!-- /input-group -->
+
+                                </form>
+                                <div id="autocmp_id" class="autocmp" style="display: block;">
+                                </div>
+
+                            </div>
+                            <ul class="nav masthead-nav">
+                                <li class="active"><a href="#">Login</a></li>
+                                <li><a href="#">Sign Up</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <a href="#" id="closeNav" >
+                            <div class="nav-close" title="click to show/hide the menu!">
+                                <div style="height: 40%"></div>
+                                &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;</div></a>
+                    </div>
+
+                    <!------------------------------------>
+
+                    <!------------------start of container------------------>
+
+                    <div class="container results-here" role="main" style="
+
+                         position: relative;
+                         top:0em;
+
+                         ">
+
+
+                    </div>
+                    <!----------------end of container-------------------->
+
+                </div>
+
+            </div>
+        </div>
+
+        
+
+        <!--search auto template here-->
+
+        <script type="text/template" id="auto-question-template">
+        {{#questions}}
+        <a href="#/question/{{ id }}" >
+            <div class="auto-view" style="max-height: 3em;">
+                {{question}}
+
+            </div>
+        </a>
+        {{/questions}}
+
+        </script>
+
+        <!--end of search template-->
+
+        <!--search auto template here-->
+
+        <script type="text/template" id="question-search-template">
+        {{#questions}}
+        <a href="#/question/{{ id }}" class="result-q">
+            <div class="row  result-inner" >
+                <div class="col-lg-9 result-view"  >
+                    {{question}} </div>
+
+                <div class="col-lg-3  result-rates"  >
+                    <span class="label label-primary ">
+                        <span class="glyphicon glyphicon-chevron-up"></span>&nbsp;{{endorsements}}
+                    </span>
+                    &nbsp;
+                    <span class="label label-warning">
+                        <span class="glyphicon glyphicon-wrench"></span>&nbsp;{{contests}}
+                    </span>
+                    &nbsp;
+                    <span class="label label-default">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;{{insights}}
+                    </span>
+                </div>
+            </div>
+        </a>
+        {{/questions}}
+
+        </script>
+
+        <!--end of search template-->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/libs/jquery/jquery.js"></script>
+        <script src="js/underscore-min.js"></script>
+
+        <script src="js/mustache.js"></script>
+        <script src="css/boot/js/bootstrap.js"></script>
+
+        <script src="js/backbone-min.js"></script>
+
+
+
+        <!--<script src="../../assets/js/docs.min.js"></script>-->
+        <script type="text/javascript">
+
+(function($) {
+    $(".ttip").tooltip();
+    $('.pophere').popover({});
+
+    /**
+     * 
+     * Backbone start here
+     */
+
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+
+        // Modify options, control originalOptions, store jqXHR, etc
+        options.url = 'http://localhost:3000' + options.url;
+
+    });
+
+
+    //---------------- to be modified --------
+
+
+    //----------------------------------------
+
+    //----------------------------------------
+    var Questions = Backbone.Collection.extend({
+        word: '',
+        url: function() {
+            console.log(this.word);
+            return '/questions/search/' + this.word;
+        }
+    });
+
+    //---form parsing --
+    $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+    //------------------
+
+
+    var SearchQuestion = Backbone.View.extend({
+        el: '.results-here',
+        template: '#question-search-template',
+        render: function(options) {
+            var that = this;
+            that.$el = $(options.el);
+            
+            if(options.action === "results"){
+                $(".autocmp").html("");
+            }
+            
+            if (options.name) {
+                
+                that.questions = new Questions({word: options.name});
+
+                that.questions.word = options.name;
+
+                that.questions.fetch({
+                    success: function(questions) {
+                        console.log(questions);
+                        var us = [];
+                        _.each(questions.models, function(question) {
+                            us.push(
+                                    {id: question.id,
+                                        question: question.get('question'),
+                                        endorsements: question.get('endorsements'),
+                                        contests: question.get('contests'),
+                                        insights: question.get('insights')
+                                    }
+                            );
+                        });
+
+                        var template = Mustache.render($(options.template).html(), {questions: us});
+                        console.log(that.$el, that.template);
+                        that.$el.html(template);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            } else {
+                // var template = _.template($('#edit-user-template').html(), {user: null});
+                // that.$el.html(template);
+                // we fail for now?????????
+            }
+        },
+        events: {
+            'click .aaaa': 'searchIt'
+        },
+        searchIt: function(ev) {
+            ev.preventDefault();
+            console.log(questionDetails);
+            var questionDetails = $(ev.currentTarget).serializeObject();
+            console.log(questionDetails);
+            var question = new Question();
+            question.save(questionDetails, {
+                success: function(question) {
+//                    router.navigate('', {trigger: true});
+                    //do nothing for now??????
+                }
+            });
+            return false;
+        }
+    });
+
+    //-------------------------------------------
+
+
+    //user edit view
+    var getQuestion = Backbone.View.extend({
+        el: '.page',
+        render: function(options) {
+
+            var that = this;
+
+            if (options.id) {
+                that.user = new User({id: options.id});
+                that.user.fetch({
+                    success: function(user) {
+                        var template = _.template($('#question-view-template').html(), {user: user});
+                        that.$el.html(template);
+                    }
+                });
+            } else {
+                // var template = _.template($('#edit-user-template').html(), {user: null});
+                // that.$el.html(template);
+                // we fail for now?????????
+            }
+        },
+        events: {
+            'submit .search_form12': 'saveUser'
+        },
+        saveUser: function(ev) {
+            var questionDetails = $(ev.currentTarget).serializeObject();
+            var question = new Question();
+            question.save(questionDetails, {
+                success: function(question) {
+//                    router.navigate('', {trigger: true});
+                    //do nothing for now??????
+                }
+            });
+            return false;
+        }
+
+    });
+
+    //-------------------------------------------
+
+//----------route
+    var Router = Backbone.Router.extend({
+        routes: {
+            '': 'home',
+            'question/search/:name': 'searchQuestion',
+            'question/:name': 'getQuestion',
+            'question/new/:id': 'createQuestion'
+        }
+    });
+//----------------
+    var router = null;
+    $(document).ready(function() {
+
+        var searchQuestion = new SearchQuestion();
+
+        router = new Router();
+
+        //??????
+        router.on('route:home', function() {
+//            $(".results-here").html("loading ...");
+//            questionList.render();
+
+        });
+
+        router.on('route:searchQuestion', function(name) {
+            console.log(name);
+            $(".results-here").html("loading ...");
+            searchQuestion.render({name: name});
+
+        });
+
+        /** *********************************
+         * 
+         */
+        $(".search_form").submit(function(evt) {
+            evt.preventDefault();
+
+            var keyword = $(".search_in").val();
+            console.log(keyword);
+            if (keyword !== undefined) {
+                searchQuestion.render({name: keyword,  action: "results", el :'.results-here',  template: '#question-search-template'});
+            }
+            //$(
+            return false;
+        });
+
+        $(".search_in").keyup(function(evt) {
+            evt.preventDefault();
+            if (evt.keyCode === 13)
+                return false;
+
+
+            var keyword = $(".search_in").val().toString();
+            console.log(keyword);
+            if (keyword.trim() !== "") {
+
+                $(".autocmp").html("Loading ... ");
+                $(".question_save").removeAttr("disabled");
+                searchQuestion.render({name: keyword, action: "auto", el :'.autocmp',  template: '#auto-question-template'});
+
+            } else {
+                $(".autocmp").html("Nothing found!");
+                $(".question_save").attr({disabled: "disabled"});
+            }
+            //
+            //$(
+            return false;
+        });
+
+        /* ******   ********   *******   ********  **** */
+        router.on('route:createQuestion', function(id) {
+            $(".page11").html("loading ...");
+            editUser.render({id: id});
+
+        });
+
+        Backbone.history.start();
+
+
+    });
+
+})(jQuery);
+
+function getWord() {
+    $("").val();
+}
+        </script>
+
+    </body>
+</html>
